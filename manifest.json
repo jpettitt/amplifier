@@ -3,7 +3,7 @@
   "name": "Amplifier  AMP/Canonical switcher",
   "short_name": "Amplifier",
   "description": "Quickly switch between canonical and AMP version of a page",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "John Pettitt",
   "icons": { 
            "48": "amplifier48.png",
