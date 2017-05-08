@@ -2,28 +2,34 @@
   "manifest_version": 2,
   "name": "Amplifier  AMP/Canonical switcher",
   "short_name": "Amplifier",
-  "description": "Quickly switch between canonical and AMP version of a page",
-  "version": "0.0.5",
-  "author": "John Pettitt",
-  "icons": { 
-           "48": "amplifier48.png",
-          "128": "amplifier128.png" 
+  "description": "Quickly switch between Canonical and AMP version of a page",
+  "version": "0.0.6",
+  "author": "John Pettitt & Timothy Cyrus & Jerzy Głowacki",
+  "icons": {
+    "48": "amplifier48.png",
+    "128": "amplifier128.png"
   },
-  "background" : {
-    "scripts": ["background.js"],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
     "persistent": true
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*","https://*/*"],
-      "js": ["amplified.js"],
-      "run_at" : "document_end"
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "amplified.js"
+      ],
+      "run_at": "document_start"
     }
   ],
-  "page_action" :
-  {
-    "default_icon" : "switcher.png",
-    "default_title" : "AMP version not detected."
+  "page_action": {
+    "default_icon": "switcher.png",
+    "default_title": "AMP version not detected"
   },
-  "options_page" : "options.html"
+  "options_page": "options.html"
 }

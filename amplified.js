@@ -1,23 +1,19 @@
-(function() {
+setTimeout(function () {
+    var amphtml = document.querySelector("html[amp], html[⚡]");
     var amplink = document.querySelector("link[rel='amphtml']");
     var canonical = document.querySelector("link[rel='canonical']");
-    
-    var  amp = {
+
+    var amp = {
         sentinel: "__AMPLIFIER__",
-        ampurl : null,
-        canonical : null,
-        isamp : (document.querySelector("html[amp]") !== null ||  document.querySelector("html[⚡]") !== null)
+        ampurl: (amplink !== null) ? amplink.href : null,
+        canonical: (canonical !== null) ? canonical.href : null,
+        isamp: amphtml !== null,
+        noredirect: location.hash === "#noredirect=1"
     };
 
-    if (amplink !== null) {
-        amp.ampurl = amplink.href;
-        
-    }
-    if (canonical !== null) {
-        amp.canonical = canonical.href;
-    }
-   
-    
-    chrome.runtime.sendMessage(amp);
-
-})();
+    chrome.runtime.sendMessage(amp, function (response) {
+        if (response && response.stop) {
+            stop();
+        }
+    });
+}, 0);

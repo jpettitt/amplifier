@@ -1,13 +1,12 @@
+var automode = document.getElementById("automode");
+var devmode = document.getElementById("devmode");
 
+automode.checked = localStorage.getItem("autoMode") === "true";
+devmode.checked = localStorage.getItem("devMode") === "true";
 
-
-
-document.getElementById("devmode").checked = (localStorage["devMode"] == "true"); // local storage stringifies things
-
-
-
-
-
-document.getElementById("devmode").addEventListener("change",function() {
-	localStorage["devMode"] = this.checked;	
+automode.addEventListener("change", function () {
+    localStorage.setItem("autoMode", this.checked);
+});
+devmode.addEventListener("change", function () {
+    localStorage.setItem("devMode", this.checked);
 });
