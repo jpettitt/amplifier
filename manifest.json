@@ -24,5 +24,5 @@
     "default_icon": "switcher.png",
     "default_title": "AMP version not detected"
   },
-  "options_page" : "options.html"
+  "options_page": "options.html"
 }
