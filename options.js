@@ -1,13 +1,7 @@
+var devmode = document.getElementById("devmode");
 
+devmode.checked = (localStorage["devMode"] === "true"); // local storage stringifies things
 
-
-
-document.getElementById("devmode").checked = (localStorage["devMode"] == "true"); // local storage stringifies things
-
-
-
-
-
-document.getElementById("devmode").addEventListener("change",function() {
-	localStorage["devMode"] = this.checked;	
+devmode.addEventListener("change", function() {
+    localStorage["devMode"] = this.checked;
 });
